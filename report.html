@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>落し物を報告 | 学内落し物システム</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html">学内落し物システム</a>
+  <nav>
+    <a href="index.html">落し物一覧</a>
+    <a class="active" href="report.html">＋ 報告する</a>
+  </nav>
+</header>
+
+<main class="container report-container">
+  <a class="back-link" href="index.html">← 落し物一覧に戻る</a>
+
+  <div class="section-heading">
+    <h1>落し物を報告する</h1>
+    <p>必要な情報を入力してください。<span class="required">*</span>は必須項目です。</p>
+  </div>
+
+  <form id="reportForm" class="report-card">
+    <div class="report-tabs">
+      <button type="button" class="tab active" data-kind="found">発見報告</button>
+      <button type="button" class="tab" data-kind="lost">紛失報告</button>
+    </div>
+
+    <input type="hidden" id="reportKind" value="found">
+
+    <label>
+      名称 <span class="required">*</span>
+      <input id="reportName" required placeholder="例：青い水筒">
+    </label>
+
+    <div class="form-row">
+      <label>
+        分類 <span class="required">*</span>
+        <select id="reportCategory" required>
+          <option value="">選択してください</option>
+          <option>日用品</option>
+          <option>学生証</option>
+        </select>
+      </label>
+
+      <label id="dateLabel">
+        発見日時 <span class="required">*</span>
+        <input id="reportDate" type="date" required>
+      </label>
+    </div>
+
+    <label>
+      場所 <span class="required">*</span>
+      <select id="reportLocation" required>
+        <option value="">選択してください</option>
+        <option>70号館</option>
+        <option>食堂</option>
+      </select>
+    </label>
+
+    <label>
+      特徴 <span class="required">*</span>
+      <textarea id="reportFeature" rows="4" required
+        placeholder="色・形・大きさなど、分かる範囲で入力してください。"></textarea>
+    </label>
+
+    <div class="upload-area">
+      <label for="photos">写真（複数枚選択できます）</label>
+      <input id="photos" type="file" accept="image/*" multiple>
+      <p class="muted">
+        写真に個人情報や顔が写り込んでいないか確認してください。
+      </p>
+      <div id="preview" class="preview-grid"></div>
+    </div>
+
+    <div class="form-actions">
+      <button class="btn-primary" type="submit">内容を確認する</button>
+    </div>
+
+    <p id="formMessage" class="form-message" role="status"></p>
+  </form>
+</main>
+
+<footer>学内落し物システム</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

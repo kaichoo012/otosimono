@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学内落し物システム | 落し物一覧</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">学内落し物システム</a>
+  <nav>
+    <a class="active" href="index.html">落し物一覧</a>
+    <a href="report.html">＋ 報告する</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="search-panel">
+    <form id="searchForm">
+      <label class="keyword-label">
+        キーワード
+        <input id="keyword" type="search" placeholder="例：水筒、学生証、黒い財布">
+      </label>
+
+      <div class="filter-grid">
+        <label>
+          分類
+          <select id="category">
+            <option value="">すべて</option>
+            <option>日用品</option>
+            <option>学生証</option>
+          </select>
+        </label>
+
+        <label>
+          場所
+          <select id="location">
+            <option value="">すべて</option>
+            <option>70号館</option>
+            <option>食堂</option>
+          </select>
+        </label>
+
+        <label>
+          発見日
+          <input id="foundDate" type="date">
+        </label>
+      </div>
+
+      <div class="search-actions">
+        <button class="btn-primary" type="submit">検索する</button>
+        <button class="btn-text" type="reset">条件をクリア</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="results-section">
+    <div class="section-heading">
+      <h2>落し物一覧</h2>
+      <span id="resultCount"></span>
+    </div>
+
+    <div id="itemsGrid" class="items-grid"></div>
+
+    <p id="emptyState" class="empty-state" hidden>
+      該当する落し物は見つかりませんでした。
+      検索条件を変更してみてください。
+    </p>
+  </section>
+
+  <section class="help-banner">
+    <div>
+      <strong>落し物を見つけた方へ</strong>
+      <p>拾得物の情報を登録して、持ち主が見つかるようにしましょう。</p>
+    </div>
+    <a class="btn-light" href="report.html">落し物を報告する →</a>
+  </section>
+</main>
+
+<footer>学内落し物システム</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
